@@ -34,6 +34,37 @@ A DDOS Which is a short form of Distributed Denial of Service attack works on si
 | Volume of traffic in the Dos attack is less as compared to DDos. | DDoS attacks allow the attacker to send massive volumes of traffic to the victim network. |
 | Types of DOS Attacks are: 1. Buffer overflow attacks 2. Ping of Death or ICMP flood 3. Teardrop Attack 4. Flooding Attack | Types of DDOS Attacks are: 1. Volumetric Attacks 2. Fragmentation Attacks 3. Application Layer Attacks 4. Protocol Attack. |
 
+# Types of DoS and DDoS attacks
+**Teardrop attack**
+
+A teardrop attack is a DoS attack that sends countless Internet Protocol (IP) data fragments to a network. When the network tries to recompile the fragments into their original packets, it is unable to.
+
+For example, the attacker may take very large data packets and break them down into multiple fragments for the targeted system to reassemble. However, the attacker changes how the packet is disassembled to confuse the targeted system, which is then unable to reassemble the fragments into the original packets.
+
+**Flooding attack**
+
+A flooding attack is a DoS attack that sends multiple connection requests to a server but then does not respond to complete the handshake.
+
+For example, the attacker may send various requests to connect as a client, but when the server tries to communicate back to verify the connection, the attacker refuses to respond. After repeating the process countless times, the server becomes so inundated with pending requests that real clients cannot connect, and the server becomes “busy” or even crashes.
+
+**IP fragmentation attack**
+
+An IP fragmentation attack is a type of DoS attack that delivers altered network packets that the receiving network cannot reassemble. The network becomes bogged down with bulky unassembled packets, using up all its resources.
+
+**Volumetric attack**
+
+A volumetric attack is a type of DDoS attack used to target bandwidth resources. For example, the attacker uses a botnet to send a high volume of request packets to a network, overwhelming its bandwidth with [**Internet Control Message Protocol (ICMP)**](https://www.fortinet.com/resources/cyberglossary/internet-control-message-protocol-icmp) echo requests. This causes services to slow down or even cease entirely.
+
+**Protocol attack**
+
+A protocol attack is a type of DDoS attack that exploits weaknesses in Layers 3 and 4 of the [**OSI model**](https://www.fortinet.com/resources/cyberglossary/osi-model). For example, the attacker may exploit the [**TCP connection**](https://www.fortinet.com/resources/cyberglossary/tcp-ip) sequence, sending requests but either not answering as expected or responding with another request using a spoofed source IP address. Unanswered requests use up the resources of the network until it becomes unavailable.
+
+**Application-based attack**
+
+An application-based attack is a type of DDoS attack that targets Layer 7 of the OSI model. An example is a Slowloris attack, in which the attacker sends partial Hypertext Transfer Protocol (HTTP) requests but does not complete them. HTTP headers are periodically sent for each request, resulting in the network resources becoming tied up.
+
+The attacker continues the onslaught until no new connections can be made by the server. This type of attack is very difficult to detect because rather than sending corrupted packets, it sends partial ones, and it uses little to no bandwidth.
+
 # Conclusion
 
 DOS and DDOS both are real threats to online services and systems. A DOS attack is when a single system will be attacked while a DDOS attack will have multiple systems attacking the victim hence making it difficult to defend against the attack. Differentiation between these two sociotechnical attacks is critical when preventing-security measures and risks of harm.
