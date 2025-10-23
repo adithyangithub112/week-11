@@ -48,13 +48,24 @@ While nearly all DDoS attacks involve overwhelming a target device or network wi
 
 # **Application layer attacks**
 
-# **The goal of the attack:**
+Application layer (Layer 7) DDoS attacks are performed by overwhelming a web application's resources with a flood of seemingly legitimate requests, such as HTTP floods, by using a botnet. Attackers achieve this by targeting specific application functions like search bars, login pages, or APIs to consume server resources, exhaust database connections, or disrupt session management. [1, 2, 3, 4, 5]  
+How the attack works 
 
-Sometimes referred to as a [layer 7](https://www.cloudflare.com/learning/ddos/what-is-layer-7/) DDoS attack (in reference to the 7th layer of the OSI model), the goal of these attacks is to exhaust the target’s resources to create a denial-of-service.
+• Building a botnet: Attackers use malware to infect a large number of devices (computers, IoT devices) to create a network of compromised machines called a botnet. [6]  
+• Launching the attack: The attacker instructs the botnet to send a massive volume of requests to a specific target, like a website, application, or API. [6, 7]  
+• Mimicking legitimate traffic: These requests are often crafted to look like normal user traffic, making them difficult to detect and distinguish from legitimate requests. [1, 2, 4]  
+• Overwhelming the application: The sheer volume of requests exhausts the server's resources, such as CPU, memory, and database connections, leading to slower performance or a complete crash. [1, 3, 5]  
 
-The attacks target the layer where web pages are generated on the server and delivered in response to [HTTP](https://www.cloudflare.com/learning/ddos/glossary/hypertext-transfer-protocol-http/) requests. A single HTTP request is computationally cheap to execute on the client side, but it can be expensive for the target server to respond to, as the server often loads multiple files and runs database queries in order to create a web page.
+Common techniques used in the attack 
 
-Layer 7 attacks are difficult to defend against, since it can be hard to differentiate malicious traffic from legitimate traffic.
+• HTTP floods: Sending a high volume of HTTP GET or POST requests to overwhelm the server. [4, 8]  
+• Cache-busting attacks: Using unique query strings in requests to prevent a content delivery network (CDN) from serving cached content, forcing the origin server to process every request. [4, 9]  
+• Authentication exhaustion: Repeatedly submitting login requests or other authentication challenges to overload the authentication system. [1]  
+• API floods: Repeatedly calling an API to consume its resources and cause it to crash. [1, 3]  
+• Slow-rate attacks: A more subtle "low and slow" method that keeps connections open by sending requests very slowly, which ties up server resources without triggering common detection thresholds. [10]  
+
+
+
 
 # **Application layer attack example:**
 
